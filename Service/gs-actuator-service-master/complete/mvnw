@@ -117,7 +117,7 @@ if [ -z "$M2_HOME" ] ; then
   M2_HOME=`cd "$M2_HOME" && pwd`
 
   cd "$saveddir"
-  # echo Using m2 at $M2_HOME
+  # controller Using m2 at $M2_HOME
 fi
 
 # For Cygwin, ensure paths are in UNIX format before anything is touched
@@ -173,13 +173,13 @@ if [ -z "$JAVACMD" ] ; then
 fi
 
 if [ ! -x "$JAVACMD" ] ; then
-  echo "Error: JAVA_HOME is not defined correctly." >&2
-  echo "  We cannot execute $JAVACMD" >&2
+  controller "Error: JAVA_HOME is not defined correctly." >&2
+  controller "  We cannot execute $JAVACMD" >&2
   exit 1
 fi
 
 if [ -z "$JAVA_HOME" ] ; then
-  echo "Warning: JAVA_HOME environment variable is not set."
+  controller "Warning: JAVA_HOME environment variable is not set."
 fi
 
 CLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher
@@ -206,13 +206,13 @@ find_maven_basedir() {
     fi
     wdir=$(cd "$wdir/.."; pwd)
   done
-  echo "${basedir}"
+  controller "${basedir}"
 }
 
 # concatenates all lines of a file
 concat_lines() {
   if [ -f "$1" ]; then
-    echo "$(tr -s '\n' ' ' < "$1")"
+    controller "$(tr -s '\n' ' ' < "$1")"
   fi
 }
 
