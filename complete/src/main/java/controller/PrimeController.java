@@ -22,7 +22,7 @@ public class PrimeController {
 
             return "Integer argument is expected";
         }
-        return new PrimeNumber().primesLessthan(int_number)+"";
+        return new PrimeNumber().isPrime(int_number)+"";
     }
 
 }
