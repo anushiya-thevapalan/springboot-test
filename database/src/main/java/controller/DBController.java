@@ -29,8 +29,8 @@ public class DBController {
     }
 
     @GetMapping(path="/all")
-    public @ResponseBody Iterable<User> getAllUsers() {
+    public @ResponseBody long getNumUsers() {
         // This returns a JSON or XML with the users
-        return userRepository.findAll();
+        return userRepository.findAll().spliterator().getExactSizeIfKnown();
     }
 }
