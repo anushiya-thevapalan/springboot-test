@@ -29,8 +29,8 @@ public class DBController {
     }
 
     @GetMapping(path="/all")
-    public @ResponseBody long getNumUsers() {
+    public @ResponseBody String getNumUsers() {
         // This returns a JSON or XML with the users
-        return userRepository.findAll().spliterator().getExactSizeIfKnown();
+        return userRepository.findById(1).getName();
     }
 }
